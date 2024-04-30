@@ -164,6 +164,6 @@ class PointCloudVideoWebpage():
     def save(self, output_path, name=None):
         if name is not None:
             output_path = join(output_path, name)
-        with open(output_path, 'w') as f:
+        with open(output_path, 'w', encoding='utf-8') as f:
             f.write(self.html_template.format(
                 geometry_string=self.mesh_snippet+self.camera_snippet, **self.html_args))
